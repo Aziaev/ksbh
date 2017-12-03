@@ -7,37 +7,37 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name="users")
-public class UserInfo implements Serializable{
+@Table(name = "users")
+public class UserInfo implements Serializable {
     private static final long serialVersionUID = 3235747599501718269L;
 
     // По умолчанию везде нужно использовать email вместо userName
     @Id
-    @Column(name="username")
+    @Column(name = "username")
     private String userName;
 
-    @Column(name="password")
+    @Column(name = "password")
     private String password;
 
-    @Column(name="role")
+    @Column(name = "role")
     private String role;
 
-    @Column(name="fullName")
+    @Column(name = "fullName")
     private String fullName;
 
-    @Column(name="firstName")
+    @Column(name = "firstName")
     private String firstName;
 
-    @Column(name="secondName")
+    @Column(name = "secondName")
     private String secondName;
 
-    @Column(name="middleName")
+    @Column(name = "middleName")
     private String middleName;
 
-    @Column(name="country")
+    @Column(name = "country")
     private String country;
 
-    @Column(name="enabled")
+    @Column(name = "enabled")
     private short enabled;
 
     public String getUserName() {

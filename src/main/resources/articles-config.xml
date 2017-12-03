@@ -3,11 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="articleService" class="com.rabigol.kswallet.service.ArticleService">
-        <property name="articleDao" ref="articleDaoBean"/>
-    </bean>
-    <bean id="appUserDetailsService" class="com.rabigol.kswallet.service.AppUserDetailsService">
-        <property name="userInfoDao" ref="userInfoDaoBean"/>
+    <bean id="articleController" class="com.rabigol.kswallet.controller.ArticleController">
+        <property name="articleService" ref="articleService"/>
     </bean>
 
 </beans>

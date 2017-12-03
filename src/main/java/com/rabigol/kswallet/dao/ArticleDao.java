@@ -10,7 +10,7 @@ import java.util.List;
 
 @Transactional
 @Repository
-public class ArticleDao implements IArticleDao{
+public class ArticleDao implements IArticleDao {
     //  TODO: add regexp checking to all DB operations
     @PersistenceContext
     private EntityManager entityManager;
@@ -31,6 +31,7 @@ public class ArticleDao implements IArticleDao{
     public void addArticle(Article article) {
         entityManager.persist(article);
     }
+
     @Override
     public void updateArticle(Article article) {
         Article artcl = getArticleById(article.getArticleId());
@@ -38,9 +39,9 @@ public class ArticleDao implements IArticleDao{
         artcl.setCategory(article.getCategory());
         entityManager.flush();
     }
-    
+
     @Override
-    public void deleteArticle(int articleId) {
+    public void deleteArticle(long articleId) {
         entityManager.remove(getArticleById(articleId));
     }
 

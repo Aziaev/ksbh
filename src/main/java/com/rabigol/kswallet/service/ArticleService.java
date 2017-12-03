@@ -12,7 +12,7 @@ public class ArticleService implements IArticleService {
     private IArticleDao articleDao;
 
     @Override
-    public List<Article> getArticles() {
+    public List<Article> getAllArticles() {
         return articleDao.getAllArticles();
     }
 

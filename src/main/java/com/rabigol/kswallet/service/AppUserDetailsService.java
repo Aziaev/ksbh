@@ -1,7 +1,9 @@
 package com.rabigol.kswallet.service;
 
+import com.rabigol.kswallet.dao.IUserInfoDao;
 import com.rabigol.kswallet.entity.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -9,12 +11,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Arrays;
 
 @Service
 public class AppUserDetailsService implements UserDetailsService {
-    @Autowired
     private IUserInfoDao userInfoDao;
 
     @Override
@@ -26,5 +28,10 @@ public class AppUserDetailsService implements UserDetailsService {
                 activeUserInfo.getPassword(),
                 Arrays.asList(authority));
         return userDetails;
+    }
+
+    @Required
+    public void setUserInfoDao(IUserInfoDao userInfoDao) {
+        this.userInfoDao = userInfoDao;
     }
 }

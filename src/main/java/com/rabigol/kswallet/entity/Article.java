@@ -9,14 +9,14 @@ public class Article implements Serializable {
     private static final long serialVersionUID = 3849977147273683054L;
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name="article_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "article_id")
     private long articleId;
 
-    @Column(name="title")
+    @Column(name = "title")
     private String title;
 
-    @Column(name="category")
+    @Column(name = "category")
     private String category;
 
     public long getArticleId() {
